@@ -17,20 +17,8 @@ objx[4] = navigator
 objx[name][4] = "navigator"
 
 
- function fObject(collecshun,str_object){
-   for(var m in collecshun){
-     document.write(str_object + '.' + m + '<br>')
-   }
- }
-
- function objFinder(indx){
-  var collecshun = objx[indx]
-  var string_object = objx[name][indx]
-
-  for(var n in collecshun){
-    document.write(collecshun + '.' + n + '<br>')
-}
-
+ function objFinder(itm,indx){
+	document.write(itm);
  }
 
 //-->
@@ -42,7 +30,7 @@ objx[name][4] = "navigator"
 
 <p>
 
-<select name='dList' onchange='objFinder(this.value)'>
+<select name='dList' onchange='objx[1].forEach(objFinder)'>
  <option value=0 selected>Select
  <option value=1>Window
  <option value=2>Document
