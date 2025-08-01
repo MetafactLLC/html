@@ -1,0 +1,96 @@
+<html>
+
+<script>
+
+var room = 109;
+
+function updateTotal(){
+	
+	var gt = document.getElementById("total");
+	var shirtquantity = 1;
+	var ticketquantity = 1;
+	var stepshowquantity = 1;
+	displaytotal = (room*document.getElementById("room_quantity").value);
+	
+	document.getElementById("on1").value = document.getElementById("room_quantity").value + "_Rooms" ;
+	displaytotal *= 1.03; displaytotal += .3;
+
+	gt.innerText = "Grand Total: $" + displaytotal.toFixed(2);
+
+}
+
+function ppTransfer(){
+		if(displaytotal == 0){
+			displaytotal = document.getElementById("amount").value ;
+			updateTotal(); //redundant, but who cares - just send out quantity info
+		}
+		document.getElementById("amount").value = displaytotal.toFixed(2);
+}
+
+</script>
+
+
+
+<body>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="BETAOOPHomecomingHotel" onsubmit="ppTransfer()">
+<input type="hidden" name="cmd" value="_xclick" /> 
+<input type="hidden" name="business" value="orlando.arnold@hotmail.com" /> 
+<input id="item_name" type="hidden" name="item_name" value="BYHomecoming2015Hotel" /> 
+<input type="hidden" name="item_number" value="1" /> 
+
+<input type="hidden" name="on0" value="Size" /> 
+<input type="hidden" name="on1" id="on1" value="AdditionalItems" /> 
+
+<input type="hidden" name="currency_code" value="USD" /> 
+<input type="hidden" name="tax" value="0.00" /> 
+<input type="hidden" name="lc" value="US" /> 
+<input type="hidden" name="amount" id="amount" value="109.00"/>
+
+
+<table>
+ <tr>
+	<td colspan=4  valign="top" align="center">Host Hotel</td></tr>
+ <tr>
+	<td>Name</td><td><input type="text" name="custom" id="custom" /></td></tr>
+ <tr>
+	<td>Phone</td><td><input type="text" name="night_phone_a" id="night_phone_a" /></td></tr>
+ <tr>
+	<td>Email</td><td><input type="text" name="email" id="email" /></td></tr>
+
+	<tr>
+	<td colspan=2>Rooms </td>
+	<td colspan=2>Quantity: <select name="room_quantity" id="room_quantity" onchange="updateTotal()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+
+ <tr>
+	<td><div id="total" name="total">Grand Total: $154.80</div></td></tr>
+
+ <tr>
+	<td colspan=4 valign="top" align="center">
+	<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alt="PayPal - The safer, easier way to pay online!" onclick="ppTransfer()" />
+	<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />	
+	</td></tr>
+
+</table>
+
+<sup>Fees will be 30% + $.30 of the Grand Total</sup>
+
+
+</form>
+
+
+
+ 
+</body>
+
+</html>

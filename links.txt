@@ -1,0 +1,50 @@
+
+-----------------
+--IPR--
+-----------------
+IPR
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+-+IPR+New+Order+Follow+Up&rs%3AParameterLanguage=en-US
+
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Summary
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_CompanySummary&rs%3AParameterLanguage=en-US
+
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Detail
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_PullCarrier&rs%3AParameterLanguage=en-US
+
+----------------------
+--ADMIN ONLY --
+----------------------
+Store Shipments
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by DM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+DM&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by RMM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+RMM&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by FDMM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+FDMM&rs%3AParameterLanguage=en-US
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+FDMM&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+
+
+
+
+
+
+

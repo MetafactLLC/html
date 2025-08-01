@@ -1,0 +1,121 @@
+<html>
+
+<script>
+
+var displaytotal = 0;
+
+function updateTotal(){
+	var gt = document.getElementById("total")
+	var q = document.getElementById("quantity").value;
+	var selectedOption = document.getElementById("os1").value;
+	var selectedOptionValue = 0;
+	switch(selectedOption){
+		case "StepShow" : selectedOptionValue = 15.00; break;
+		case "GameTicket" : selectedOptionValue = 35.00; break;
+		case "Both" : selectedOptionValue = 50.00; break;
+		default : selectedOptionValue = 0;
+	}
+	
+	displaytotal = (q * document.getElementById("amount").value) ;
+	displaytotal += Number(selectedOptionValue);
+	displaytotal *= 1.03; displaytotal += .3;
+	
+	gt.innerText = "Grand Total: $" + displaytotal.toFixed(2);
+}
+
+function ppTransfer(){
+		if(displaytotal == 0){
+			displaytotal = document.getElementById("amount").value ;
+			displaytotal *= 1.03; displaytotal += .3;
+		}
+		document.getElementById("amount").value = displaytotal.toFixed(2);
+}
+
+</script>
+
+
+
+<body>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="BETAOOPHomecoming" onsubmit="ppTransfer()">
+<input type="hidden" name="cmd" value="_xclick" /> 
+<input type="hidden" name="business" value="orlando.arnold@hotmail.com" /> 
+<input id="item_name" type="hidden" name="item_name" value="BYHomecoming2014" /> 
+<input type="hidden" name="item_number" value="1" /> 
+
+<input type="hidden" name="on0" value="Size" /> 
+<input type="hidden" name="on1" value="AdditionalItems" /> 
+
+<input type="hidden" name="currency_code" value="USD" /> 
+<input type="hidden" name="tax" value="0.00" /> 
+<input type="hidden" name="lc" value="US" /> 
+<input type="hidden" name="amount" id="amount" value="125.00"/>
+
+
+Please note that processing fees will be assessed with the transaction.  <br>
+<table>
+ <tr>
+	<td colspan=4  valign="top" align="center">Homecoming 2014</td></tr>
+ <tr>
+	<td>Name</td><td><input type="text" name="custom" id="custom" /></td></tr>
+ <tr>
+	<td>Phone</td><td><input type="text" name="night_phone_a" id="night_phone_a" /></td></tr>
+ <tr>
+	<td>Email</td><td><input type="text" name="email" id="email" /></td></tr>
+
+	<tr>
+	<td colspan=2>Standard Package is $129.04  ($125 + $4.04 processing fees)</td>
+	<td colspan=2>Quantity: <select name="quantity" id="quantity" onchange="updateTotal()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+ <tr>
+	<td>Additional Items</td>
+	<td><select name="os1" id="os1" onchange="updateTotal()">
+		<option value="None" selected>N/A</option>
+		<option value="StepShow">Step Show ($15)</option>
+		<option value="GameTicket">Game Ticket ($35)</option>
+		<option value="Both">Both ($50)</option></select></td></tr>	
+ <tr>
+	<td colspan=4>T Shirt Sizes</td></tr>
+ <tr>
+	<td>Small</td><td><input type="radio" name="os0" id="os0" value="small"></td>
+	<td>2XL</td><td><input type="radio" name="os0" id="os0" value="3XL"></td></tr>
+ <tr>
+	<td>Medium</td><td><input type="radio" name="os0" id="os0" value="medium"></td>
+	<td>3XL</td><td><input type="radio" name="os0" id="os0" value="3XL"></td></tr>
+ <tr>
+	<td>Large</td><td><input type="radio" name="os0" id="os0" value="large" checked></td>
+	<td>4XL</td><td><input type="radio" name="os0" id="os0" value="4XL"></td></tr>
+ <tr>
+	<td>XL</td><td><input type="radio" name="os0" id="os0" value="XL"></td>
+	<td>5XL</td><td><input type="radio" name="os0" id="os0" value="5XL"></td></tr>
+ <tr>
+	<td><div id="total" name="total">Grand Total: </div></td></tr>
+
+ <tr>
+	<td colspan=4 valign="top" align="center">
+	<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alt="PayPal - The safer, easier way to pay online!" onclick="ppTransfer()" />
+	<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />	
+	</td></tr>
+
+</table>
+
+<sup>Fees will be 30% + $.30 of the Grand Total</sup>
+
+
+</form>
+
+
+
+ 
+</body>
+
+</html>

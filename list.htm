@@ -1,0 +1,81 @@
+<html>
+<style>
+	.answer {background-color:khaki; font-family:arial; width:80%; padding:2;}
+	.code {font-family:lucida console; font-size:11; width:70%;}
+	.node {font-size:11; border:1px solid;}	sup {font-size:9;}
+</style>
+<body>
+
+
+	<div class='answer'>
+
+	Tail recursion can also be used to count the number of nodes in a singly linked
+	list.  A singly linked list is a concrete data structure consisting of a 
+	sequence of nodes.  Each node stores an object and a link to the next node. 
+	The last node in the list, the tail node, points to a null character.  
+	<center>
+	<table>
+	 <tr>
+		<td>
+			<table cellspacing=0>
+				<tr>
+				<td class='node'>First Object</td>
+				<td class='node'><b>&#8594;</b></td></tr>
+
+			</table>
+		</td>
+		<td>
+			<table cellspacing=0>
+				<tr>
+				<td class='node'>Second Object</td>
+				<td class='node'><b>&#8594;</b></td></tr>
+			</table>
+
+		</td>
+		<td>
+			<table cellspacing=0>
+				<tr>
+				<td class='node'>Third Object</td>
+				<td class='node'><b>null</b></td></tr>
+			</table>
+		</td>
+
+	 </tr>
+	</table>
+	</center>
+
+	Using the 
+	Node class in the lession (file: LinkedLists.pdf), I created a 'Node' class
+	from this example and implemented it as Nodes below.  Also included is the recursive 
+	method 'nodeListCount' used to get the count of items in this list.   	<p>
+	<div class='code'>
+    	public static void main(String[] args) {<br>
+        	&nbsp;Nodes third = new Nodes("Last and final baby",null);<br>
+
+        	&nbsp;Nodes second = new Nodes("Second is the first looser",third);<br>
+        	&nbsp;Nodes first = new Nodes("this is the first",second);<br><br>
+     
+   		&nbsp;System.out.println("the singly linked list has: "  <br>
+                   &nbsp;&nbsp;&nbsp;+ nodeListCount(first, 0) + " nodes");<br>
+    	}<br>
+    	public static int nodeListCount(Nodes n, int count){<br>
+
+        	&nbsp;if(n == null){<br>
+            		&nbsp;&nbsp;return count;<br>
+        	&nbsp;} else {  return nodeListCount(n.getNext(),++count); }<br>
+    	}</div><p>
+	
+	This method needs to recieve the top node and 0 in order to get the correct 
+	count.  It takes those arguments and checks to see if the value of the 
+	node is null, if it is not null, it calls the method getNext(), 
+	increments the counter, and passes both of those arguments to 
+	itself recursively.  In the base case, ( for example: nodeListCount(third,0))
+	1 will be returned.  The null check is valid because when getNext() is 
+	called in the base case, null is returned.   
+	
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<html>
+
+
+<script language='javascript'>
+<!--
+
+var objx = new Array()
+objx[name] = new Array()
+
+objx[1] = window
+objx[name][1] = "window"
+objx[2] = document
+objx[name][2] = "document"
+objx[3] = history
+objx[name][3] = "history"
+objx[4] = navigator
+objx[name][4] = "navigator"
+
+
+ function fObject(collecshun,str_object){
+   for(var m in collecshun){
+     document.write(str_object + '.' + m + '<br>')
+   }
+ }
+
+ function objFinder(indx){
+  var collecshun = objx[indx]
+  var string_object = objx[name][indx]
+
+  for(var n in collecshun){
+    document.write(string_object + '.' + n + '<br>')
+  }
+ }
+
+//-->
+</script>
+
+<body>
+
+<form>
+
+<p>
+
+<select name='dList' onchange='objFinder(this.value)'>
+ <option value=1>Window
+ <option value=2>Document
+ <option value=3>History
+ <option value=4>Navigator
+</select>
+
+<hr>
+
+
+
+
+</form>
+
+</body>
+
+</html>

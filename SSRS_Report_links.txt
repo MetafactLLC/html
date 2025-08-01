@@ -1,0 +1,98 @@
+Updated links: 
+
+
+
+PRODUCTION links: 
+
+-----------------
+--USERS & ADMIN--
+-----------------
+New Order Follow Up
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up&rs:Command=Render
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up+PDF&rs:Command=Render
+--downloads
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up+PDF&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+--history
+http://waprds040/ReportServer_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up+PDF&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Summary
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_CompanySummary&rs:Command=Render
+--downloads
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_CompanySummary&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_CompanySummary&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Detail
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_PullCarrier&rs:Command=Render
+--downloads
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_PullCarrier&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+http://waprds040/ReportServer_PRIS52/Pages/ReportViewer.aspx?%2fEVIS%2fEmergency_Visibility_PullCarrier&rs:Command=Render&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+
+=====================================================================================================================================================
+=====================================================================================================================================================
+=====================================================================================================================================================
+
+QA links:
+
+-----------------
+--USERS & ADMIN--
+-----------------
+New Order Follow UP
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+-+New+Order+Follow+Up&rs%3AParameterLanguage=en-US
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+-+New+Order+Follow+Up+PDF&rs%3AParameterLanguage=en-US
+--downloads
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+-+New+Order+Follow+Up&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+-+New+Order+Follow+Up+PDF&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Shipments
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+Company+Shipments&rs%3AParameterLanguage=en-US
+--downloads
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+Company+Shipments&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency+Visibility+Company+Shipments&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Summary
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_CompanySummary&rs%3AParameterLanguage=en-US
+--downloads
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_CompanySummary&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_CompanySummary&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+-----------------
+--USERS & ADMIN--
+-----------------
+Company Detail
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_PullCarrier&rs%3AParameterLanguage=en-US
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_PullCarrier&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=Excel
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FEmergency_Visibility_PullCarrier&rs%3AParameterLanguage=en-US&rs:Command=Render&rs:Format=PDF
+----------------------
+--ADMIN ONLY --
+----------------------
+Store Shipments
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by DM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+DM&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by RMM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+RMM&rs%3AParameterLanguage=en-US
+
+---------------
+--ADMIN ONLY --
+---------------
+Store Shipments by FDMM
+http://waqads018/ReportServer_QAFI19?%2FEVIS%2FStore+Shipments+by+FDMM&rs%3AParameterLanguage=en-US
+

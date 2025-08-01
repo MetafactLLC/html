@@ -1,0 +1,193 @@
+<html>
+
+
+<title>date page</title>
+
+<head>
+<style>
+	.month {border-color:navy;background-color:#2551a7;color:white;font-size:12pt}
+	.normal {background-color:LightGoldenRodYellow}
+	.highlight {background-color:khaki; cursor:hand;}
+	#tblcal {border-color:Gainsboro;border-width:1px;border-style:solid;font-family:Verdana;font-size:9pt;height:190px;width:350px;border-collapse:collapse}
+	#tblcal2 {border-color:Gainsboro;border-width:1px;border-style:solid;font-family:Verdana;font-size:9pt;height:190px;width:350px;border-collapse:collapse}
+</style>
+
+<script language='javascript'>
+<!--
+	function dothis(avalue){
+		var m = new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+		var f = new Date()
+		var d = new Date(m[avalue] + " 1, " + f.getYear())
+		var counter
+		var currentmonth = d.getMonth()
+		counter = 1
+		var cal
+		cal = "<table id='tblcal' cellpadding=2 cellspacing=0 bordercolor='Gainsboro' border=0 >"
+		cal = cal + "<tr><td class='month' align=center colspan=7>" + m[avalue] + "</td></tr>"
+		cal = cal + "<tr><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>"
+		for(i=0;i<=5;i++){
+			cal = cal + "<tr>"
+			for(c=0;c<7;c++){
+				if (c != d.getDay()){
+					cal = cal + "<td></td>"
+				} else {	
+					if(currentmonth == d.getMonth()){
+						cal = cal + "<td class='normal' onclick='showdate(this)' onmouseover='highlight(this)' onmouseout='nohighlight(this)' id='" + (d.getMonth()+ 1) + "/" + d.getDate() + "/" + d.getYear() + "'>" + d.getDate() + "</td>"
+						counter++
+						d.setDate(counter)
+					}
+				}
+			}
+			cal = cal + "</tr>"
+		}
+		cal = cal + "</table>"
+		document.getElementById('calendar').innerHTML = cal
+	}
+	function highlight(name){
+		var eyed = name.id
+		document.getElementById(eyed).className = "highlight"
+	}
+	function nohighlight(name){
+		var eyed = name.id
+		document.getElementById(eyed).className = "normal"	
+	}
+	function showdate(name){
+		if(document.getElementById('daterange').innerHTML.length < 5){
+			document.getElementById('daterange').innerHTML = name.id 
+		} else {
+			document.getElementById('daterange').innerHTML = document.getElementById('daterange').innerHTML + " - " + name.id	
+			if(document.getElementById('daterange').innerHTML.length > 24){
+				document.getElementById('daterange').innerHTML = ""
+			}
+		}
+		document.getElementById('dates').value = document.getElementById('daterange').innerHTML
+	}
+
+	function sendoff(){
+		if(document.getElementById('dates').value == ""){
+			alert("enter a valid value")
+		} else { 
+			if(confirm("You want to submit data for " + document.getElementById('dates').value)){
+				document.forms['forum'].submit()
+			} else { return false; }
+		}
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	function periodhighlight(name){
+		var row=name.parentElement;
+		for(c=0;c<3;c++){
+			row.childNodes[c].className = 'highlight'
+		}
+	}
+	function periodnohighlight(name){
+		var row=name.parentElement;
+		for(c=0;c<3;c++){
+			row.childNodes[c].className = 'normal'
+		}
+	}
+	function showperiod(name){
+		var row = name.parentElement;
+		document.getElementById('daterange').innerHTML = row.childNodes[1].innerHTML + " - " + row.childNodes[2].innerHTML
+		document.getElementById('dates').value = document.getElementById('daterange').innerHTML
+	}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+	function doperiodtable(){
+		var periodname = new Array(200401,200402,200403,200404,200405,200406,200407,200408,200409,200410,200411,200412,'0501','0502','0503','0504','0505','0506','0507','0508','0509','0510','0511','0512')
+		var startperiod = new Array('12/18/2003','1/20/2004','2/19/2004','3/19/2004','4/20/2004','5/19/2004','6/18/2004','7/20/2004','8/18/2004','9/17/2004','10/16/2004','11/16/2004','12/17/2004','1/19/2005','2/17/2005','3/19/2005','4/20/2005','5/19/2005','6/18/2005','7/20/2005','8/18/2005','9/17/2005','10/18/2005','11/16/2005')
+		var endperiod = new Array('1/19/2004','2/18/2004','3/18/2004','4/19/2004','5/18/2004','6/17/2004','7/19/2004','8/17/2004','9/16/2004','10/15/2004','11/15/2004','12/16/2004','1/18/2005','2/16/2005','3/18/2005','4/19/2005','5/18/2005','6/17/2005','7/19/2005','8/17/2005','9/16/2005','10/17/2005','11/15/2005','12/16/2005')
+		//////////////////////////this is the period breakdown for 2005//////////////////////////////////////////
+		//var periodname = new Array('0501','0502','0503','0504','0505','0506','0507','0508','0509','0510','0511','0512')
+		//var startperiod = new Array('12/17/2004','1/19/2005','2/17/2005','3/19/2005','4/20/2005','5/19/2005','6/18/2005','7/20/2005','8/18/2005','9/17/2005','10/18/2005','11/16/2005')
+		//var endperiod = new Array('1/18/2005','2/16/2005','3/18/2005','4/19/2005','5/18/2005','6/17/2005','7/19/2005','8/17/2005','9/16/2005','10/17/2005','11/15/2005','12/16/2005')
+			
+		var periodtable = ''
+			
+		periodtable += '<table id=\'tblcal2\' cellpadding=2 cellspacing=0 bordercolor=\'Gainsboro\' border=0>'
+		periodtable += '<tr class=\'month\'><td class=\'tdHeader\'>PERIOD</td>'
+		periodtable += '<td class=\'tdHeader\'>START</td><td class=\'tdHeader\'>END</td></tr>'
+
+		var i=0;
+		var refdate = new Date()
+		var endp = new Date(endperiod[i])
+		while(endp.getTime() < refdate.getTime()){
+			periodtable += '<tr>'			
+			periodtable += '<td class=\'normal\' onclick=\'showperiod(this)\' onmouseover=\'periodhighlight(this)\' onmouseout=\'periodnohighlight(this)\'>' + periodname[i] + '</td>'
+			periodtable += '<td class=\'normal\' onclick=\'showperiod(this)\' onmouseover=\'periodhighlight(this)\' onmouseout=\'periodnohighlight(this)\'>' + startperiod[i] + '</td>'
+			periodtable += '<td class=\'normal\' onclick=\'showperiod(this)\' onmouseover=\'periodhighlight(this)\' onmouseout=\'periodnohighlight(this)\'>' + endperiod[i] + '</td>'
+			periodtable +=  '</tr>'
+			i++;
+			var endp = new Date(endperiod[i]);
+		}
+		periodtable = periodtable + '</table>'
+		document.getElementById('calendar').innerHTML = periodtable
+	}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////creates month options for dropdown	
+	function domonthdropdown(){
+		var thismonth = new Date();
+		var monthname = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+		var addmonth = new Option('Select a month and date',0);
+		document.dformd.monthdropdown[0] = addmonth;
+		for(var c=0;c<=thismonth.getMonth();c++){
+			var addmonth = new Option(monthname[c],c)
+			document.dformd.monthdropdown[c+1] = addmonth
+		}
+	}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+</script>
+
+</head>
+
+<body>
+
+<form id='forum' name='dformd' method='post' action='date.htm'>
+<select name='monthdropdown' onchange='dothis(this.value)'></select>
+
+<span id='calendar'>
+
+</span>
+
+<span id='daterange'>
+</span>
+
+<input type='button' value='submit' onclick='sendoff()'>
+<input type='hidden' id='dates' name='dates'>
+		
+<script language='javascript'>
+<!--
+	doperiodtable();
+	domonthdropdown();
+//-->
+</script>
+
+<span id="calendar">
+
+<br><input type='button' value='Get Data' onclick='sendoff()'></span><span id="daterange"></span>
+												
+
+</table>
+
+
+<p><p><p><p><p><p>
+
+<table id='tblcal'>
+	<tr>
+		<td>Solve Rate</tr>
+		<td></td></tr>
+	<tr>
+		<td>FTF </td>
+		<td></td></tr>
+	<tr>
+		<td>Case to Call</td>
+		<td></td></tr>
+	<tr>
+		<td>Call Effectiveness</td>
+		<td></td></tr>
+</table>
+
+
+</form>
+</body>
+
+</html>

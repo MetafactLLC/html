@@ -1,0 +1,150 @@
+<html>
+<head>
+	<title>
+		Julian Calendar
+	</title>
+	<style>
+		body {font-family:verdana;}
+		table {border-style:none; border-collapse:collapse;}
+		h1 {font-style:italic; font-size:65;}
+		.month {font-size:14; font-weight:bold;}
+		.day {font-size:10; color:navy; font-weight:bold;}
+		.juliandate {font-size:10; color:red; font-weight:bold;}
+	</style>
+
+	<script language='javascript'>
+		var dayz = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+		var monthz = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+		var juliandate = -30;  //javascript issue - idk why this adds 30 before we do the math
+		var a = 0;
+		
+		//this calendar deals with string manipulation, not object manipulation
+
+		//loop through the months in the year
+		function drawYear(yr){
+			
+			var yearHeader = '<table><tr><td align=center><h1>' + yr + '</h1>';
+			var yearFooter = '</td></tr></table>';
+			var y = yearHeader + '<table valign="top" cellpadding=5 cellspacing=3>';
+			
+
+			var mo = 1;
+			var m = drawMonth(mo,yr);
+			
+			for(var i=0;i<3;i++){
+				y += '<tr>';
+				for(var c=0;c<4;c++){
+					y += '<td>' + drawMonth(mo,yr) + '</td>';
+					mo++;
+				}
+				y += '</tr>';
+			}	
+			y += '</table>' + yearFooter;
+			
+			
+			return y;
+		}
+
+		//draw a full month, return html 
+		function drawMonth(mo,yr){
+			
+			var datestring = (mo) + '/1/' + yr
+			var d = new Date(datestring);
+			var m = '<table border=1 valign="top" cellpadding=2 width=300>';
+			var inMonth = true;
+			var datecounter = 0;
+			var c = 0;
+
+			m += '<tr><td colspan=7 class=month>' + monthz[mo-1] + '</td></tr>'
+			
+			//Week header
+			while(c<dayz.length){
+				m += (m.search('<tr>') == 0 ? '<tr>' : '');
+				m += '<td>' + dayz[c].substr(0,2) + '</td>';
+				c++;
+			}												
+			m += '</tr>';
+			c = 0;
+
+			//days
+			while(inMonth){	
+				m += '<tr>';
+				while(c<dayz.length){
+					if(d.getDay() == c && d.getMonth() == (mo-1)){
+						m += '<td><div class=day>' + d.getDate() + '</div><div class=juliandate>' + juliandate + '</div></td>';
+						datecounter = d.getDate() + 1;
+						juliandate++;
+						d.setDate(datecounter);
+					} else {
+						m += '<td><div>&nbsp;</div></td>';
+					}
+					c++;
+				}	
+				//here I chose to toggle the size of the calendar, I made every month a standard 6 weeks, it could also be dynamic 
+				//inMonth = (d.getMonth() == (mo-1) ? true : false);
+				if (a < 5) {inMonth = true; a++;} else {inMonth = false;a=0;}
+				
+				m += '</tr>';
+				c = 0;
+			}
+			m += '</table>';
+			return m;			
+		}	
+
+		function addYearsToDropDown(){
+			var op = document.getElementById('yearSelection');
+			
+			// get the past 10 years and future 10 years & add to drop down
+			var d = new Date();
+			var pastyear = (d.getFullYear() - 10);
+
+			for(var i=0;i<20;i++){
+				try{
+					op.add(new Option(pastyear,pastyear),i);
+					if(pastyear <= d.getFullYear()) { op.options[i].selected = true; }
+					pastyear++;
+				} catch (x) { 
+					var opt = document.createElement("option");
+					op.options.add(opt);
+					opt.text = pastyear;
+					opt.value = pastyear;
+					pastyear++;
+					if(pastyear <= d.getFullYear()) { op.options[i].selected = true; }
+
+				} //issues with Firefox
+			}
+		}
+
+		function selectYear(yr){
+			juliandate = -30;  //javascript issue - idk why this adds 30 before we do the math
+			document.getElementById('calendar').innerHTML = drawYear(yr);	
+		}
+
+
+	</script>
+</head>
+
+<body>
+
+<form>
+
+<select id='yearSelection' onChange='selectYear(this.value)'></select>
+
+<div id='calendar'>
+
+</div>
+
+</form>
+
+</body>
+
+
+<script language='javascript'>
+	addYearsToDropDown();
+	document.getElementById('calendar').innerHTML = drawYear(2010);	
+
+</script>
+
+
+
+</html>

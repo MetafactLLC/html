@@ -1,0 +1,166 @@
+<html>
+
+<script>
+
+var displaytotal = 0;
+var displaytext = "";
+var shirt = 20;
+var ticket = 35;
+var cup = 10;
+var tailgate = 25;
+
+
+function noTix(){
+	var o = document.getElementById("game_ticket_quantity");
+	o.selectedIndex = 0;
+	updateTotal();
+}
+
+function updateTotal(){
+	
+	var gt = document.getElementById("total");
+	var txt = document.getElementById("package_contents");
+	
+	var shirtquantity = 1;
+	var ticketquantity = 1;
+	
+	displaytotal = tailgate + (shirt*document.getElementById("shirt_quantity").value) + (ticket*document.getElementById("game_ticket_quantity").value) + (cup*document.getElementById("cup_quantity").value);
+	displaytext = "Your package includes:"; 
+	displaytext +=		"<ul>";
+	displaytext +=		"<li>" + document.getElementById("game_ticket_quantity").value + " Game ticket(s)</li>";
+	displaytext +=		"<li>" + document.getElementById("shirt_quantity").value + " Shirt(s)</li>";
+	displaytext +=		"<li>" + document.getElementById("cup_quantity").value + " Cup(s)</li>";
+	displaytext +=		"<li>Tailgate</li>";
+	displaytext +=		"</ul>";
+	
+	document.getElementById("on1").value = document.getElementById("shirt_quantity").value + "_shirts|" + document.getElementById("game_ticket_quantity").value + "_gametickets|" +document.getElementById("cup_quantity").value + "_cups";
+	displaytotal *= 1.03; displaytotal += .30;
+
+	gt.innerText = "Grand Total: $" + displaytotal.toFixed(2);
+	txt.innerHTML = displaytext;
+	
+}
+
+function ppTransfer(){
+		if(displaytotal == 0){
+			displaytotal = document.getElementById("amount").value ;
+			updateTotal(); //redundant, but who cares - just send out quantity info
+			//displaytotal *= 1.03; displaytotal += .3;
+		}
+		document.getElementById("amount").value = displaytotal.toFixed(2);
+}
+
+</script>
+
+
+
+<body>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="BETAOOPHomecoming" onsubmit="ppTransfer()">
+<input type="hidden" name="cmd" value="_xclick" /> 
+<input type="hidden" name="business" value="orlando.arnold@hotmail.com" /> 
+<input id="item_name" type="hidden" name="item_name" value="BYHomecoming2016" /> 
+<input type="hidden" name="item_number" value="1" /> 
+
+<input type="hidden" name="on0" value="Size" /> 
+<input type="hidden" name="on1" id="on1" value="AdditionalItems" /> 
+
+<input type="hidden" name="currency_code" value="USD" /> 
+<input type="hidden" name="tax" value="0.00" /> 
+<input type="hidden" name="lc" value="US" /> 
+<input type="hidden" name="amount" id="amount" value="93.00"/>
+
+
+<table>
+ <tr>
+	<td colspan=4  valign="top" align="center">Homecoming 2016</td></tr>
+ <tr>
+	<td colspan=4><button type="button" id="notix" name="notix" onclick="noTix()">If you are a SEASON ticket holder or DON'T want to purchase tickets, CLICK HERE</button></td></tr>
+ <tr>
+	<td colspan=2>Game Ticket </td>
+	<td colspan=2>Quantity: <select name="game_ticket_quantity" id="game_ticket_quantity" onchange="updateTotal()">
+		<option value="0">0</option>
+		<option value="1" selected>1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+
+<tr>
+	<td colspan=2>Cup </td>
+	<td colspan=2>Quantity: <select name="cup_quantity" id="cup_quantity" onchange="updateTotal()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+				
+<tr>
+	<td colspan=2>Shirt </td>
+	<td colspan=2>Quantity: <select name="shirt_quantity" id="shirt_quantity" onchange="updateTotal()">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+				
+ <tr>
+	<td colspan=4>Shirt Sizes</td></tr>
+ <tr>
+	<td>Small</td><td><input type="radio" name="os0" id="os0" value="small"></td>
+	<td>2XL</td><td><input type="radio" name="os0" id="os0" value="3XL"></td></tr>
+ <tr>
+	<td>Medium</td><td><input type="radio" name="os0" id="os0" value="medium"></td>
+	<td>3XL</td><td><input type="radio" name="os0" id="os0" value="3XL"></td></tr>
+ <tr>
+	<td>Large</td><td><input type="radio" name="os0" id="os0" value="large" checked></td>
+	<td>4XL</td><td><input type="radio" name="os0" id="os0" value="4XL"></td></tr>
+ <tr>
+	<td>XL</td><td><input type="radio" name="os0" id="os0" value="XL"></td>
+	<td>5XL</td><td><input type="radio" name="os0" id="os0" value="5XL"></td></tr>
+ <tr>
+	<td colspan=4><div id="total" name="total">Grand Total: $93.00</div></td></tr>
+ <tr>
+	<td colspan=4><div id="package_contents" name="package_contents">Your package includes: 
+		<ul>
+			<li>1 Game ticket</li>
+			<li>1 Shirt</li>
+			<li>1 Cup</li>
+			<li>Tailgate</li>
+		</ul>
+	
+	</div></td></tr>
+
+ <tr>
+	<td colspan=4 valign="top" align="center">
+	<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alt="PayPal - The safer, easier way to pay online!" onclick="ppTransfer()" />
+	<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />	
+	</td></tr>
+
+</table>
+
+<sup>Fees will be 3% + $.30 of the Grand Total</sup>
+
+</form>
+
+
+
+ 
+</body>
+
+</html>

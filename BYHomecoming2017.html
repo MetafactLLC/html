@@ -1,0 +1,101 @@
+<html>
+
+<script>
+
+var displaytotal = 0;
+var displaytext = "";
+var packagename = "";
+var amt = 0;
+
+function updateTotal(){
+	
+	var gt = document.getElementById("total");
+
+	var qt = document.getElementById("package_quantity").value;
+	amt = (document.BETAOOPHomecoming.os0[1].checked ? 25 : 55 );
+	packagename = ( amt == 55 ? "Cornell Package" : "Tailgate Package" );
+	
+	displaytotal = (qt*amt) ;
+	displaytotal *= 1.03; displaytotal += .30; amt = displaytotal; 
+
+	gt.innerText = "Grand Total: $" + displaytotal.toFixed(2).toString() + "   Package:" + packagename ;
+}
+
+function ppTransfer(){
+		if(displaytotal == 0){
+			displaytotal = document.getElementById("amount").value ;
+			updateTotal(); //redundant, but who cares - just send out quantity info
+		}
+		document.getElementById("amount").value = amt.toFixed(2);
+		alert(document.getElementById("amount").value);
+}
+
+</script>
+
+
+
+<body>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="BETAOOPHomecoming" onsubmit="ppTransfer()">
+<input type="hidden" name="cmd" value="_xclick" /> 
+<input type="hidden" name="business" value="aphiabetaupsilon1936@gmail.com" /> 
+<input id="item_name" type="hidden" name="item_name" value="BYHomecoming2017" /> 
+<input type="hidden" name="item_number" value="2017" /> 
+
+<input type="hidden" name="on0" value="Package" /> 
+
+<input type="hidden" name="currency_code" value="USD" /> 
+<input type="hidden" name="tax" value="0.00" /> 
+<input type="hidden" name="lc" value="US" /> 
+<input type="hidden" name="amount" id="amount" value="56.95"/>
+
+<table>
+ <tr>
+	<td colspan=4  valign="top" align="center">Homecoming 2017</td></tr>
+ <tr>
+	<td colspan=2>Package Count </td>
+	<td colspan=2>Quantity: <select name="package_quantity" id="package_quantity" onchange="updateTotal()">
+		<option value="0">0</option>
+		<option value="1" selected>1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option></select></td></tr>
+ <tr>
+	<td>Cornell Package ($55) </td><td><input type="radio" name="os0" id="os0" value="55" checked onchange="updateTotal()"></td>
+	<td colspan=3><div id="package_contents" name="package_contents">Your package includes: 
+		<ul>
+			<li>1 Shirt</li>
+			<li>1 Cup</li>
+			<li>2 Tailgate Wristbands</li>
+		</ul>	
+	</div></tr>
+ <tr>
+	<td>2 Tailgate Wristbands ($25) </td><td><input type="radio" name="os0" id="os0" value="25" onchange="updateTotal()"></td></td>
+	<td colspan=3><div id="package_contents" name="package_contents">Your package includes: 
+		<ul>
+			<li>2 Tailgate Wristbands</li>
+		</ul>	
+	</div></tr>
+ <tr>
+	<td colspan=4><div id="total" name="total">Grand Total: $56.95</div></td></tr>
+ <tr>
+	<td colspan=4 valign="top" align="center">
+	<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alt="PayPal - The safer, easier way to pay online!" onclick="ppTransfer()" />
+	<img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" />	
+	</td></tr>
+
+</table>
+
+<sup>Fees will be 3% + $.30 of the Grand Total</sup>
+
+</form>
+
+</body>
+
+</html>

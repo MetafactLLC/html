@@ -1,0 +1,96 @@
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+QA
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Emergency Visibility - New Order Follow Up
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Emergency_Visibility_CompanySummary
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency_Visibility_CompanySummary&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Emergency Visibility Company Shipments
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency+Visibility+Company+Shipments&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Store Shipments 
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Store Shipments by DM
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+DM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Store Shipments by FDMM
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+FDMM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Store Shipments by RMM
+http://waqads018/Reports_QAFI19/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+RMM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+PROD
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Emergency Visibility - New Order Follow Up
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency+Visibility+-+New+Order+Follow+Up&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail
+
+Pull Carrier
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency_Visibility_PullCarrier&SelectedTabId=PropertiesTab&ViewMode=Detail&SelectedSubTabId=SnapshotsTab&SortBy=SnapshotDateTime&IsAscending=false
+
+Company Summary
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fEmergency_Visibility_CompanySummary&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail&SortBy=SnapshotDateTime&IsAscending=false
+
+Store Shipments
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail&SortBy=SnapshotDateTime&IsAscending=false
+
+Store Shipments by DM
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+DM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail&SortBy=SnapshotDateTime&IsAscending=false
+
+Store Shipments by FDMM
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+FDMM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail&SortBy=SnapshotDateTime&IsAscending=false
+
+Store Shipments by RMM
+http://waprds040/Reports_PRIS52/Pages/Report.aspx?ItemPath=%2fEVIS%2fStore+Shipments+by+RMM&SelectedTabId=PropertiesTab&SelectedSubTabId=SnapshotsTab&ViewMode=Detail&SortBy=SnapshotDateTime&IsAscending=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
